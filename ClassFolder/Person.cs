@@ -14,6 +14,8 @@ namespace FormUI
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
         public string UserPassword { get; set; }
+        public string OTP { get; set; }
+        public Boolean EmailVerified { get;set; }
         
         public string FullInfo
         {
