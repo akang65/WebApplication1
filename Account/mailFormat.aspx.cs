@@ -22,7 +22,7 @@ namespace WebApplication1.Account
             {
 
 
-                Msg.From = new MailAddress("Akangtoshi@gmail.com", "CabBoking");// Sender details here, replace with valid value
+                Msg.From = new MailAddress("cabbooking65@gmail.com", "CabBoking");// Sender details here, replace with valid value
                 Msg.Subject = Subject.Text; // subject of email
                 Msg.To.Add(To.Text); //Add Email id, to which we will send email
                 Msg.Body = EmailMessage.Text;
@@ -32,7 +32,7 @@ namespace WebApplication1.Account
                 smtp.UseDefaultCredentials = false; // to get rid of error "SMTP server requires a secure connection"
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
-                smtp.Credentials = new System.Net.NetworkCredential("Akangtoshi@gmail.com", "password");// replace with valid value
+                smtp.Credentials = new System.Net.NetworkCredential("cabbooking65@gmail.com", "cabbooking@123");// replace with valid value
                 smtp.EnableSsl = true;
                 smtp.Timeout = 20000;
 
