@@ -21,21 +21,22 @@ namespace WebApplication1
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
            
-            /* DataAccess db = new DataAccess();
+           /* DataAccess db = new DataAccess();
              db.InsertPerson(TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxEmail.Text,TextBoxPhoneNumber.Text, TextBoxpassword.Text);
              TextBoxFirstName.Text = "";
              TextBoxLastName.Text = "";
              TextBoxEmail.Text = "";
              TextBoxPhoneNumber.Text = "";
              TextBoxpassword.Text = "";
-            */ 
+           */
+            
             EmailController ec = new EmailController();
             string sub = "Email Verification";
             string body = "test123otp";
             ec.ConfirmEmail(TextBoxFirstName.Text, TextBoxEmail.Text,sub,body);
             TextBoxFirstName.Text = "";
             TextBoxEmail.Text = "";
-            //     Response.Redirect("Verify.aspx");
+            Response.Redirect("Verify.aspx");
 
 
 
