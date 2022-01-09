@@ -11,7 +11,13 @@ namespace WebApplication1.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+        protected void ButtonResendOTP_Click(object sender, EventArgs e)
+        {
+           // ButtonResendOTP.Attributes["class"] = "btn btn-primary btn-block";
+           
+        }     
     }
 }
