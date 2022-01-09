@@ -21,7 +21,7 @@ namespace FormUI
         {
             get
             {
-                // "Tim Corey (test@test.com)"
+                
                 return $"{ FirstName } { LastName } ({ EmailAddress }) { PhoneNumber} { UserPassword }";
             }
         }
