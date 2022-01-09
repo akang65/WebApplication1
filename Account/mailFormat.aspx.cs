@@ -32,7 +32,7 @@ namespace WebApplication1.Account
                 smtp.UseDefaultCredentials = false; // to get rid of error "SMTP server requires a secure connection"
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
-                smtp.Credentials = new System.Net.NetworkCredential("cabbooking65@gmail.com", "cabbooking@123");// replace with valid value
+                smtp.Credentials = new System.Net.NetworkCredential("cabbooking65@gmail.com", "cabbooking@123");
                 smtp.EnableSsl = true;
                 smtp.Timeout = 20000;
 
