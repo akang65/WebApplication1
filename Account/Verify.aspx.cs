@@ -15,18 +15,25 @@ namespace WebApplication1.Account
         
         protected void Page_Load(object sender, EventArgs e)
         {
-      
-        }
-
-    protected void ButtonResendOTP_Click(object sender, EventArgs e)
-        {
             
-
-    }
-        public void Verifyotp()
-        {
-            DataAccess dataAccess = new DataAccess();
-            dataAccess.InsertOtp(,TextBoxOTP.Text);
         }
+
+        protected void ButtonVerify_Click(object sender, EventArgs e)
+        {
+            Verifyotp();
+        }
+        protected void ButtonResendOTP_Click(object sender, EventArgs e)
+        {
+            string emailretrived = Session["email"].ToString();
+            DataAccess dataAccess = new DataAccess();
+            dataAccess.InsertOtp(emailretrived, TextBoxOTP.Text);
+        }
+        public void Verifyotp()
+        {        
+            string emailretrived = Session["email"].ToString();
+            DataAccess dataAccess = new DataAccess();
+            dataAccess.InsertOtp(emailretrived,TextBoxOTP.Text);
+        }
+
     }
 }

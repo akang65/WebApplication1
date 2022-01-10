@@ -83,7 +83,7 @@ namespace WebApplication1
                 db.InsertPerson(TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxEmail.Text, TextBoxPhoneNumber.Text, TextBoxpassword.Text, body);
                 //TextBoxFirstName.Text = "";
                 //TextBoxEmail.Text = "";
-                email = TextBoxEmail.Text.ToString();
+                Session["email"] = TextBoxEmail.Text;
 
                 EmailVerifOTP();
             }

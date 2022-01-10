@@ -26,7 +26,7 @@
 
             
                     <div class="input-group mb-3">
-                        <asp:TextBox ID="TextBoxOTP" runat="server" TextMode="Number" class="form-control" placeholder="Enter OTP" />
+                        <asp:TextBox ID="TextBoxOTP" runat="server" class="form-control" placeholder="Enter OTP" />
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <asp:Button ID="ButtonVerify" runat="server" class="btn btn-primary btn-block" Text="Verify" />
+                            <asp:Button ID="ButtonVerify" runat="server" class="btn btn-primary btn-block" Text="Verify" OnClick="ButtonVerify_Click" />
                         </div>
                         <!-- /.col -->
                     </div>
