@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="forgot-password.aspx.cs" Inherits="WebApplication1.forgot_password" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecoverPassword.aspx.cs" Inherits="WebApplication1.Account.RecoverPassword" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,23 @@
 
       <form id="form1" runat="server" method="post">
         <div class="input-group mb-3">
-          <asp:TextBox id="Textboxemail" runat="server" class="form-control" placeholder="Email"/>
+          <asp:TextBox id="TextBoxOtp" runat="server" class="form-control" placeholder="Email"/>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+           <div class="input-group mb-3">
+          <asp:TextBox id="TextboxNewPass" runat="server" class="form-control" placeholder="Email"/>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+            <div class="input-group mb-3">
+          <asp:TextBox id="TextboxConfirmPass" runat="server" class="form-control" placeholder="Email"/>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -63,4 +79,3 @@
 <script src="../stylesjs/adminlte.min.js"></script>
 </body>
 </html>
-

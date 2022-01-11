@@ -53,9 +53,7 @@ namespace FormUI
             {
                 //Person newPerson = new Person { FirstName = firstName, LastName = lastName, EmailAddress = emailAddress, PhoneNumber = phoneNumber }; 
                 List<Person> people = new List<Person>();
-
                 people.Add(new Person { FirstName = firstName, LastName = lastName, EmailAddress = emailAddress, PhoneNumber = phoneNumber, UserPassword= password, OTP=otp });
-
                 connection.Execute("InsertPerson @FirstName, @LastName, @EmailAddress, @PhoneNumber, @UserPassword, @OTP", people);
                
             }
@@ -71,7 +69,7 @@ namespace FormUI
 
             }
         }
-        //Login User
+                        //Login User
         public List<Person> GetPeople(string email, string password)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
@@ -80,6 +78,28 @@ namespace FormUI
                 var output = connection.Query<Person>("UserAuth @EmailAddress , @UserPassword",
                    new { EmailAddress = email, UserPassword = password }).ToList();
                 return output;
+            }
+        }
+                //reset password using otp
+        public void ReqNewPasswordOTP(string email,string password)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
+            {
+                List<Person> people = new List<Person>();
+                people.Add(new Person { EmailAddress = email,UserPassword=password});
+                connection.Execute("SetTempPassword @Emailaddress,@Userpassword", people);
+
+            }
+        }
+                // recover passsword -->(Update old password)
+        public void ResetPassword(string email, string nPassword, string otp)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
+            {
+                List<Person> people = new List<Person>();
+                people.Add(new Person { EmailAddress = email, UserPassword=nPassword,OTP = otp });
+                connection.Execute("ResetpasswordViaOTP @Emailaddress, @UserPassword, @OTP", people);
+
             }
         }
     }

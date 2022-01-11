@@ -16,6 +16,7 @@ namespace FormUI
         public string UserPassword { get; set; }
         public string OTP { get; set; }
         public Boolean EmailVerified { get;set; }
+        public string TemporaryPassword { get; set; }   
         
         public string FullInfo
         {

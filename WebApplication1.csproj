@@ -148,6 +148,7 @@
     <Content Include="Account\forgot-password.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\mailFormat.aspx" />
+    <Content Include="Account\RecoverPassword.aspx" />
     <Content Include="Account\register.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="index.aspx" />
@@ -2095,6 +2096,13 @@
     </Compile>
     <Compile Include="Account\mailFormat.aspx.designer.cs">
       <DependentUpon>mailFormat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>

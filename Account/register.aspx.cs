@@ -97,7 +97,8 @@ namespace WebApplication1
         {               
             EmailController ec = new EmailController();
             string sub = "Email Verification";
-            ec.ConfirmEmail(TextBoxFirstName.Text, TextBoxEmail.Text, sub, body);
+            string message = "Your OTP(One Time Password) for email verification on CabBooking is: ";
+            ec.ConfirmEmail(TextBoxFirstName.Text, TextBoxEmail.Text, sub, body,message);
             TextBoxFirstName.Text = "";
             TextBoxEmail.Text = "";
             Response.Redirect("Verify.aspx");

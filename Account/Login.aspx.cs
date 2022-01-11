@@ -27,30 +27,25 @@ namespace WebApplication1
                 if (Request.Cookies["cookie_Email"] != null && Request.Cookies["cookie_Password"] != null)
                     CheckBox.Checked = true;
                 {
-                  // Response.Redirect("Index.aspx");
+                    //Response.Redirect("Index.aspx"); activate later
                 }
-            }else
-            {
-                Response.Redirect("Login.aspx");
             }
-        }
-     
-        protected void Signin(object sender,EventArgs e)
-        {
-            try
+            else
             {
-                //Opening Sql Connection
-                DataAccess db = new DataAccess();
-                people = db.GetPeople(TextBoxEmail.Text, TextBoxpassword.Text);
+                CheckBox.Checked = false;
+            }
+            
+        }
+        protected void Signin(object sender, EventArgs e)
+        {     
+            DataAccess db = new DataAccess();
+            people = db.GetPeople(TextBoxEmail.Text, TextBoxpassword.Text);
 
-                //Checking if the returned values from database contains the user email and password
-                if (people.Count <= 0)
-
-                {
-                    Response.Write(" Incorrect Email or Password");
-                }
-                else if (people.Count >= 1)
-                {
+            if (people.Count >= 1)
+            {
+               // string combindedString = string.Join(Environment.NewLine, people);
+               // if (combindedString.Contains("Temp"))
+              
                     if (CheckBox.Checked == true)
                     {
                         Response.Cookies["cookie_Email"].Value = TextBoxEmail.Text;
@@ -62,18 +57,17 @@ namespace WebApplication1
                     {
                         Response.Cookies["cookie_Email"].Expires = DateTime.Now.AddDays(-1);
                         Response.Cookies["cookie_Email"].Expires = DateTime.Now.AddDays(-1);
+                        //Response.Redirect("index.aspx");
                     }
-                    Response.Redirect("Index.aspx");
-                }
-            }
-            catch
-            {
-                
-                Response.Write(error);
-               
-            }
 
-            
+              Response.Redirect("index.aspx");
+
+            }
+            else
+            {
+                Response.Write("Incorrect Emailm or address");
+            }
+          
         }
     }
 }

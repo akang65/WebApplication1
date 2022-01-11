@@ -13,14 +13,14 @@ namespace WebApplication1.ClassFolder
    
     public class EmailController
     {
-        public void ConfirmEmail(string name, string email, string subject, string body) {
+        public void ConfirmEmail(string name, string email, string subject, string body,string message) {
             //Send Email
             MailMessage Msg = new MailMessage();
             try {
                 Msg.From = new MailAddress("cabbooking65@gmail.com", "CabBoking");// Sender details here, replace with valid value
                 Msg.Subject = subject; // subject of email
                 Msg.To.Add(email); //Add Email id, to which we will send email
-                Msg.Body = "Your OTP(One Time Password) for email verification on CabBooking is " +body;
+                Msg.Body =  "Hi" +name +message+ body;
                 Msg.IsBodyHtml = true;
                 Msg.Priority = MailPriority.High;
                 SmtpClient smtp = new SmtpClient();
