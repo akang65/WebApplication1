@@ -20,7 +20,7 @@ namespace WebApplication1.ClassFolder
                 Msg.From = new MailAddress("cabbooking65@gmail.com", "CabBoking");// Sender details here, replace with valid value
                 Msg.Subject = subject; // subject of email
                 Msg.To.Add(email); //Add Email id, to which we will send email
-                Msg.Body =  "Hi" +name +message+ body;
+                Msg.Body =  "Hi" + name +message+ body;
                 Msg.IsBodyHtml = true;
                 Msg.Priority = MailPriority.High;
                 SmtpClient smtp = new SmtpClient();

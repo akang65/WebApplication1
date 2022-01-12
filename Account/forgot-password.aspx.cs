@@ -52,8 +52,8 @@ namespace WebApplication1
                 temp = new String(Stringchar);
 
                 EmailController ec = new EmailController();
-                string Subject = "Temporary password";
-                string Message = "Your Temporary password is";
+                string Subject = "Re-set password";
+                string Message = "Your Temporary password is:";
                 string Name = "";
                 ec.ConfirmEmail(Name, Textboxemail.Text, Subject, temp, Message);
                 DataAccess dataaccess = new DataAccess();
