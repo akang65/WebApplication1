@@ -29,7 +29,7 @@
 
       <form id="form1" runat="server" method="post">
         <div class="input-group mb-3">
-          <asp:TextBox id="TextBoxOtp" runat="server" class="form-control" placeholder="Email"/>
+          <asp:TextBox id="TextBoxOtp" runat="server" class="form-control" placeholder="Enter OTP"/>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -37,7 +37,7 @@
           </div>
         </div>
            <div class="input-group mb-3">
-          <asp:TextBox id="TextboxNewPass" runat="server" class="form-control" placeholder="Email"/>
+          <asp:TextBox id="TextboxNewPass" runat="server" class="form-control" placeholder="New Password"/>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -45,7 +45,7 @@
           </div>
         </div>
             <div class="input-group mb-3">
-          <asp:TextBox id="TextboxConfirmPass" runat="server" class="form-control" placeholder="Email"/>
+          <asp:TextBox id="TextboxConfirmPass" runat="server" class="form-control" placeholder="ConfirmPassword"/>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>

@@ -59,7 +59,7 @@ namespace WebApplication1
                 DataAccess dataaccess = new DataAccess();
                 dataaccess.ReqNewPasswordOTP(Textboxemail.Text, temp);
                 Session["email"] = Textboxemail.Text;
-                Response.Redirect("Recoverpassword");
+                Response.Redirect("Recoverpassword.aspx");
             }
             catch(Exception e)
             {

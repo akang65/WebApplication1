@@ -80,25 +80,25 @@ namespace FormUI
                 return output;
             }
         }
-                //reset password using otp
+                //recover password by sending otp
         public void ReqNewPasswordOTP(string email,string password)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
             {
                 List<Person> people = new List<Person>();
-                people.Add(new Person { EmailAddress = email,UserPassword=password});
-                connection.Execute("SetTempPassword @Emailaddress,@Userpassword", people);
+                people.Add(new Person { EmailAddress = email,TemporaryPassword=password});
+                connection.Execute("SetTempPassword @Emailaddress,@TemporaryPassword", people);
 
             }
         }
-                // recover passsword -->(Update old password)
+                // reset passsword -->(Update old password)
         public void ResetPassword(string email, string nPassword, string otp)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
             {
                 List<Person> people = new List<Person>();
-                people.Add(new Person { EmailAddress = email, UserPassword=nPassword,OTP = otp });
-                connection.Execute("ResetpasswordViaOTP @Emailaddress, @UserPassword, @OTP", people);
+                people.Add(new Person { EmailAddress = email, UserPassword=nPassword,TemporaryPassword = otp });
+                connection.Execute("ResetpasswordViaOTP @EmailAddress, @UserPassword, @TemporaryPassword", people);
 
             }
         }

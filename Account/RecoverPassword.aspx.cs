@@ -17,19 +17,28 @@ namespace WebApplication1.Account
 
         protected void req_password_Click(object sender, EventArgs e)
         {
-            string emailretrived = Session["email"].ToString();
-            //1.verify otp which is stored in database column as(TemporaryPassword)
-            //2.update new password in the column (UserPassword)
-            /* (procedure): IF EXISTS(SELECT * from People where EmailAddress=@EmailAddress and TemporaryPassword=@OTP)
-      BEGIN
-       update dbo.People 
-       set UserPassword=@NewPassword
-       where EmailAddress=@EmailAddress and OTP =@OTP
-      END
-             * */
-            DataAccess db = new DataAccess();
-            db.ResetPassword(emailretrived,TextBoxOtp.Text,TextboxNewPass.Text);
+            try
+            {
+                string emailretrived = Session["email"].ToString();
+                if (emailretrived != null)
+                {
+                    DataAccess db = new DataAccess();
+                    db.ResetPassword(emailretrived, TextboxNewPass.Text, TextBoxOtp.Text);
+
+                }
+                else
+                {
+                    Response.Write("Cannot Retrive Email Details");
+                }
+                Response.Redirect("index.aspx");
+            }
+            catch
+            {
+                Response.Write("Cannot Retrive Email Details");
+            }
+            
+            
             
         }
-    }
+    } 
 }
